@@ -3,10 +3,10 @@
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-      host : '127.0.0.1',
-      user : 'root',
-      password : '',
-      database : 'iot_health'
+      host : 'http://iacc706.000webhostapp.com',
+      user : 'id7265702_iot_team',
+      password : 'iot@123',
+      database : 'id7265702_iot_database'
     }
   });
 
