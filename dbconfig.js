@@ -7,7 +7,8 @@ const knex = require('knex')({
       // user : 'id7265702_iot_team',
       // password : 'iot@123',
       // database : 'id7265702_iot_database'
-      connectionString:process.env.DATABASE_URL
+      connectionString:process.env.DATABASE_URL,
+      ssl:false
     }
   });
 
