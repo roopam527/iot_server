@@ -17,7 +17,7 @@ router.get('/:hash',(req,res)=>{
                 if(response.length > 0){
                     //IF THERE IS SOME DATA THEN WE WILL SEND THAT DATA TO THE FRONTEND
                 data=response.map((index)=>{
-                    return index['rate'];
+                    return index['pulse'];
                 })
                 labels=response.map((index)=>{
                     const date_and_time = String(index['date_and_time']).substring(0,24);

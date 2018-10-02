@@ -7,7 +7,7 @@ var knex = require('../dbconfig');
 
 
 //HERE WE ARE RECIEVING DATA AND THE ID/HASH OF THE PIC CONTROLLER 
-router.get('/store/:id/:temp', function (req, res) {
+router.get('/:id/:temp', function (req, res) {
 
     //THEN WE ARE STORING THE RECIEVED DATA IN THE URL TO OUR DATABASE IN temperature TABLE
     knex('temperature').insert(
@@ -32,7 +32,7 @@ router.get('/store/:id/:temp', function (req, res) {
 //HERE WE ARE SENDING ALL DATA FROM THE DATABASE (IN temperature TABLE) TO THE FRONTEND HELP OF GET REQUEST 
 //WE ARE ACCEPTING REQUEST BY LOOKING AT hash PRSESENT IN THE URL 
 
-router.get('/retrieve/:hash',(req,res)=>{
+router.get('/:hash',(req,res)=>{
    
     knex('temperature').where({
         //HERE WE ARE SENDING ALL DATA THAT ARE STORED IN DATABASE WITH HELP OF THAT SPECIFIC hash
