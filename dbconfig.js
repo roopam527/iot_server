@@ -3,10 +3,10 @@
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-      host : '192.168.43.1:3306',
-      user : 'root',
-      password : '',
-      database : 'iot_health'
+      host : 'sql12.freesqldatabase.com',
+      user : 'sql12259448',
+      password : 'f54NVBeQTC',
+      database : 'sql12259448'
       // connectionString:process.env.DATABASE_URL,
       // ssl:false
     }
