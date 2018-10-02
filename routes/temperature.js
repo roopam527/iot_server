@@ -44,7 +44,7 @@ router.get('/:hash',(req,res)=>{
 
 
 //HERE WE ARE RECIEVING DATA AND THE ID/HASH OF THE PIC CONTROLLER 
-router.get('/:id/:temp', function (req, res) {
+router.get('/store/:id/:temp', function (req, res) {
 
     //THEN WE ARE STORING THE RECIEVED DATA IN THE URL TO OUR DATABASE IN temperature TABLE
     knex('temperature').insert(
