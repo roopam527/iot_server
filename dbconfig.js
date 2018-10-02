@@ -3,7 +3,7 @@
 const knex = require('knex')({
     client: 'mysql',
     connection: {
-      host : 'http://mysql.iacc706.000webhostapp.com:3306',
+      host : 'mysql.iacc706.000webhostapp.com:3306',
       user : 'id7265702_iot_team',
       password : 'iot@123',
       database : 'id7265702_iot_database'
