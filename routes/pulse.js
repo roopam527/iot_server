@@ -11,7 +11,7 @@ router.get('/:hash',(req,res)=>{
         //HERE WE ARE SENDING ALL DATA THAT ARE STORED IN DATABASE WITH HELP OF THAT SPECIFIC hash
         hash:req.params.hash
         })
-        .select('rate','date_and_time')
+        .select('pulse','date_and_time')
         .then((response)=>{
             //CHECKING IF THERE IS SOME DATA THAT IS STORED WITH THE HELP OF THAT SPECIFIC HASH
                 if(response.length > 0){
