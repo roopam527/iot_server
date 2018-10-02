@@ -17,7 +17,7 @@ router.get('/:id/:temp', function (req, res) {
         res.send('Temperature was successfully stored in the database')
       })
     .catch((err)=>{
-        //HANDLING ERROR RECIEVED FROM DATABASE
+     //HANDLING ERROR RECIEVED FROM DATABASE
       res.send("Error")
     })
 })
@@ -52,7 +52,7 @@ router.get('/:hash',(req,res)=>{
                 { 
                     //IF THERE IS NO DATA THEN WE WILL SEND THE ERROR 
                    return res.status(400).json({
-                    message:"No entry Found !!"
+                    message:"No entry Found !!!"
                     })
                 }
 
