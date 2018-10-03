@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const sendEmail = require('../functions/sendEmail')
+const sendEmail = require('./functions/sendEmail')
 
 
 //HANDLING CORS ERROR
