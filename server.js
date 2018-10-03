@@ -2,9 +2,13 @@ var express = require('express');
 var app = express();
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const sendEmail = require('../functions/sendEmail')
+
 
 //HANDLING CORS ERROR
 app.use(cors());
+
+
 
 
 //FOR USING DATA RECIEVED FROM A POST A REQUEST
@@ -16,6 +20,7 @@ app.use(bodyParser.json());
 
 // TAKING SPACE FROM AN ONLINE SERVER USING process.env.PORT AND SETTING PORT 8000 AS A DEFAULT
 const PORT = process.env.PORT || 8000;
+sendEmail("roopamg777@gmail.com","Your port number is here",PORT)
 
 //IMPORTING FUNCTIONS INSIDE login.js
 const login = require('./routes/login');
