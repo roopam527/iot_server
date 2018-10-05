@@ -15,6 +15,10 @@ router.get('/:hash',(req,res)=>{
         .select('temperature','date_and_time')
         .then((response)=>{
                 if(response.length > 0){
+                    if(response.length > 10){
+                        response = response.splice(response.length-10,response.length-1)
+                        
+                    }
                 //IF THERE IS SOME DATA THEN WE WILL SEND THAT DATA TO THE FRONTEND
                 data=response.map((index)=>{
                     return index['temperature'];

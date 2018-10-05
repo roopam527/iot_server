@@ -15,7 +15,7 @@ const sendEmail = require('../functions/sendEmail')
 //HERE WE ARE HANDLING ALL REQUEST COMING TO THE ip-address/register TO REGISTER A NEW USER
 router.post('/',(req,res) =>{
     //HERE WE ARE ENCRYPTING EMAIL TO MAKE AN UNIQUE ID/API_KEY FOR EACH USER
-    const hash = bcrypt.hashSync(req.body.email).replace("/","-");
+    const hash = bcrypt.hashSync(req.body.email).replaceAll("/","-");
 
     //HERE WE ARE ENCRYPTING PASSWORD BEFORE STORING THEM TO DATABASE
     const passwordhash= bcrypt.hashSync(req.body.password)

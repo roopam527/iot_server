@@ -17,6 +17,7 @@ router.get('/:id/:temp', function (req, res) {
                       }
                     )
       .then(()=>{
+       
         res.send('Temperature was successfully stored in the database')
       })
     .catch((err)=>{
@@ -37,11 +38,17 @@ router.get('/:hash',(req,res)=>{
     knex('temperature').where({
         //HERE WE ARE SENDING ALL DATA THAT ARE STORED IN DATABASE WITH HELP OF THAT SPECIFIC hash
         hash:req.params.hash
+        
         })
         .select('temperature','date_and_time')
         .then((response)=>{
             //CHECKING IF THERE IS SOME DATA THAT IS STORED WITH THE HELP OF THAT SPECIFIC HASH
                 if(response.length > 0){
+                    
+                    if(response.length > 10){
+                        response = response.splice(response.length-10,response.length-1)
+                        
+                    }
                     //IF THERE IS SOME DATA THEN WE WILL SEND THAT DATA TO THE FRONTEND
                 data=response.map((index)=>{
                     return index['temperature'];
@@ -50,6 +57,7 @@ router.get('/:hash',(req,res)=>{
                     const date_and_time = String(index['date_and_time']).substring(0,24);
                     return date_and_time;
                 })
+                if(data.length)
                     res.status(200).json({data:data,labels:labels})
                 }
                 else
